@@ -39,9 +39,9 @@ def convert(fromUnit: str, toUnit: str, value: float) -> float: # convert will b
         except KeyError:
             raise ConversionNotPossibleException(f"Cannot convert from {from_unit} to {to_unit}") # if not found it wil raise ConversionNotPossibleException
 
-    if fromUnit in temperature_units and toUnit in temperature_units:
+    if fromUnit in temperature_units and toUnit in temperature_units: # checking for the unit and see if it passes parameter
         return convertTemperature(fromUnit, toUnit, value)
-    elif fromUnit in distance_units and toUnit in distance_units:
+    elif fromUnit in distance_units and toUnit in distance_units: # checks the unit 
         return convertDistance(fromUnit, toUnit, value)
     else:
-        raise ConversionNotPossibleException(f"Cannot convert from {fromUnit} to {toUnit}")
+        raise ConversionNotPossibleException(f"Cannot convert from {fromUnit} to {toUnit}") # if condition isn't meant it will raise ConversionNotPossibleException
